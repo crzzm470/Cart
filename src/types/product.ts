@@ -10,6 +10,14 @@ export interface Product {
   category: string;
   thumbnail: string;
   images: string[];
+  weight?: string; // o number, según tu API
+  dimensions?: Dimensions;
+}
+
+export interface Dimensions {
+  width: number;
+  height: number;
+  depth: number;
 }
 
 export interface CartItem extends Product {
