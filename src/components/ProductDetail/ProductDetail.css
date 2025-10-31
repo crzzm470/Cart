@@ -1,0 +1,277 @@
+/* ProductDetail.css - Versión Unificada y Final */
+
+/* -------------------------------------- */
+/* 1. ESTRUCTURA Y TEMA BASE 🏷️           */
+/* -------------------------------------- */
+.product-detail-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Modo Claro */
+.product-detail-page.light {
+    background-color: var(--color-background-soft);
+    color: var(--color-text);
+}
+
+/* Modo Oscuro */
+.product-detail-page.dark {
+    background-color: var(--color-background-darker);
+    color: var(--color-text-dark);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------------------------- */
+/* 2. ENCABEZADO Y NAVEGACIÓN ⬅️          */
+/* -------------------------------------- */
+
+/* Botón Volver */
+.back-button {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: color 0.2s, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.back-button:hover {
+    color: var(--color-accent);
+    background-color: var(--color-background-soft);
+}
+
+.product-detail-page.dark .back-button:hover {
+    /* Ajuste para el modo oscuro */
+    background-color: var(--color-background-darker-hover, rgba(255, 255, 255, 0.05));
+}
+
+/* Título */
+.product-detail-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-accent-light);
+    padding-bottom: 10px;
+}
+
+/* Categoría */
+.product-category {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.product-category span {
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: capitalize;
+}
+
+/* -------------------------------------- */
+/* 3. DISEÑO PRINCIPAL (IMAGEN Y INFO) 🖼️  */
+/* -------------------------------------- */
+.detail-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap; 
+}
+
+/* Bloque de imágenes */
+.detail-images {
+    flex: 1;
+    min-width: 300px;
+}
+
+.main-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: var(--color-background-main, #f8f8f8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: border-color 0.2s, opacity 0.2s;
+}
+
+.gallery img:hover {
+    border-color: var(--color-accent);
+    opacity: 1;
+}
+
+/* Bloque de información del producto */
+.detail-info {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-info .description {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.detail-info .brand {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+/* Separador visual */
+.detail-separator {
+    border: none;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 20px 0;
+}
+
+/* Especificaciones extendidas */
+.product-specs {
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+.product-specs span {
+    font-weight: 600;
+}
+
+/* -------------------------------------- */
+/* 4. PRECIO Y ACCIÓN 💸                 */
+/* -------------------------------------- */
+.price-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ajuste para separar precio y rating */
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.price-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.current-price {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--color-success);
+}
+
+.discount-tag {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.rating {
+    font-size: 1.2em;
+    color: var(--color-warning);
+}
+
+.stock-status {
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: var(--color-text-secondary);
+}
+
+.add-to-cart-btn-large {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+    max-width: 400px;
+}
+
+.add-to-cart-btn-large:hover {
+    background-color: var(--color-accent-dark);
+}
+
+.add-to-cart-btn-large:disabled {
+    background-color: var(--color-border);
+    cursor: not-allowed;
+}
+
+/* -------------------------------------- */
+/* 5. ESTILOS DE ESTADO (Loading/Error) 🛑*/
+/* -------------------------------------- */
+.loading-detail, .error-detail, .not-found-detail {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5em;
+    color: var(--color-text-secondary);
+}
+
+/* -------------------------------------- */
+/* 6. RESPONSIVE (Móviles) 📱            */
+/* -------------------------------------- */
+@media (max-width: 768px) {
+    .product-detail-page {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .detail-content {
+        flex-direction: column;
+    }
+
+    .product-detail-page h1 {
+        font-size: 2em;
+    }
+    
+    .price-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .current-price {
+        font-size: 2em;
+    }
+    
+    .price-group {
+        width: 100%; /* Ocupar todo el ancho para la alineación */
+        justify-content: space-between;
+    }
+
+    .add-to-cart-btn-large {
+        max-width: 100%;
+    }
+}
