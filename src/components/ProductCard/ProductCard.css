@@ -159,3 +159,29 @@
 .product-card {
   animation: fadeInUp 0.4s ease both;
 }
+
+/* === META: precio, stock, rating === */
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  gap: 0.5rem;
+}
+
+.product-meta .price {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.product-meta .stock {
+  opacity: 0.6;
+}
+
+.product-meta .rating {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: #f1c40f; /* color dorado para las estrellas */
+}

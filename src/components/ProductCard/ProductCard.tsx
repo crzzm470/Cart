@@ -14,10 +14,10 @@ export function ProductCard({ product }: ProductCardProps): JSX.Element {
   const { isDark } = useTheme();
   const navigate = useNavigate(); 
 
-  const handleCardClick = () => {
+ const handleCardClick = () => {
     navigate(`/producto/${product.id}`); 
   };
-  
+
 
   return (
     <div 
@@ -37,6 +37,11 @@ export function ProductCard({ product }: ProductCardProps): JSX.Element {
       <div className="product-info">
         <h3>{product.title}</h3>
         <p className="product-description">{product.description}</p>
+        <div className="product-meta">
+          <span className="price">${product.price}</span>
+          <span className="stock">{product.stock} disponibles</span>
+          <span className="rating">⭐ {product.rating}</span>
+        </div>
         <div className="product-footer">
           <button 
             className="add-to-cart-btn"
